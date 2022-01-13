@@ -7,6 +7,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.widget.Toolbar; // Dùng cho setSupportActionBar(toolbar);
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -43,7 +44,10 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.nav_camera:
-                        Toast.makeText(MainActivity.this, "CLICKED TO CAMERA", Toast.LENGTH_SHORT).show();break;
+                        Toast.makeText(MainActivity.this, "CLICKED TO CAMERA", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                    startActivity(intent);
+                        break;
                     case  R.id.nav_gallery:
                         Toast.makeText(MainActivity.this, "CLICKED TO GALLERY", Toast.LENGTH_SHORT).show();break;
                     case  R.id.nav_view:
